@@ -1,14 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('compile') {
-      steps {
-        git 'https://github.com/pujithamothkuri/edurekaproject.git'
-        sh '/opt/apache-maven-3.6.3/bin/mvn compile'
-        sleep 10
-      }
-    }
-
+    
     stage('codereview-pmd') {
       post {
         success {
